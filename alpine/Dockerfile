@@ -10,5 +10,8 @@ WORKDIR /octo
 RUN curl https://download.octopusdeploy.com/octopus-tools/${OCTO_TOOLS_VERSION}/OctopusTools.${OCTO_TOOLS_VERSION}.portable.tar.gz --output OctopusTools.tar.gz
 RUN tar -zxvf OctopusTools.tar.gz
 
+#delete dependency
+RUN apk del curl
+
 WORKDIR /src
 ENTRYPOINT ["dotnet", "/octo/Octo.dll"]

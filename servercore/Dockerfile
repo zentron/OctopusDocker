@@ -1,0 +1,1 @@
+FROM microsoft/dotnet:2.1-runtime-nanoserver-sac2016
