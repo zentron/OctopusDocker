@@ -4,7 +4,6 @@ MAINTAINER someone someone@octopus.com
 #alpine doesnt have curl installed
 RUN apk add --no-cache curl
 
-#This needs to be updated
 ENV OCTO_TOOLS_VERSION 4.31.1
 
 WORKDIR /octo
