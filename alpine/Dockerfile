@@ -1,5 +1,8 @@
-FROM microsoft/dotnet:2.0.5-runtime-jessie
+FROM microsoft/dotnet:2.1-runtime-alpine
 MAINTAINER someone someone@octopus.com
+
+#alpine doesnt have curl installed
+RUN apk add --no-cache curl
 
 #This needs to be updated
 ENV OCTO_TOOLS_VERSION 4.31.1
