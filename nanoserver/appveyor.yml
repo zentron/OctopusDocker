@@ -8,15 +8,15 @@ environment:
   secure: jmD9um0U9uJ9uKmAASvz3wxR4IYFU9bCc4N9mgMcX28=
 build_script:
 - ps: >-
-    cd servercore
+    cd nanoserver
 
-    docker build -t roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-servercore .
+    docker build -t roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-nanoserver .
 
 test_script:
 - ps: >-
-    docker run roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-servercore version
+    docker run roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-nanoserver version
 deploy_script:
 - ps: >-
     docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
 
-    docker push roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-servercore
+    docker push roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-nanoserver
