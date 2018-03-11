@@ -8,7 +8,9 @@ environment:
 build_script:
 - ps: >-
     cd servercore
+
     docker build -t octo:servercore .
+
 test_script:
  - docker run octo:servercore version
 deploy_script:
