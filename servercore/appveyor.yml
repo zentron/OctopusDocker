@@ -13,7 +13,8 @@ build_script:
     docker build -t roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-servercore .
 
 test_script:
- - docker run roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-servercore version
+- ps: >-
+    docker run roberterez/octopusdocker:${env:APPVEYOR_REPO_TAG_NAME}-servercore version
 deploy_script:
 - ps: >-
     docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
