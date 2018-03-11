@@ -6,6 +6,7 @@ environment:
  DOCKER_PASS:
   secure: jmD9um0U9uJ9uKmAASvz3wxR4IYFU9bCc4N9mgMcX28
 build_script:
+ - cd servercore
  - docker build -t octo:servercore .
 test_script:
  - docker run octo:servercore version
