@@ -5,12 +5,11 @@ MAINTAINER someone someone@octopus.com
 RUN apk add --no-cache curl
 
 ENV OCTO_TOOLS_VERSION 4.31.1
+ENV OCTO_TOOLS_DOWNLOAD_URL https://download.octopusdeploy.com/octopus-tools/$OCTO_TOOLS_VERSION/OctopusTools.$OCTO_TOOLS_VERSION.portable.tar.gz
 
 WORKDIR /octo
-RUN curl https://download.octopusdeploy.com/octopus-tools/${OCTO_TOOLS_VERSION}/OctopusTools.${OCTO_TOOLS_VERSION}.portable.tar.gz --output OctopusTools.tar.gz
-RUN tar -zxvf OctopusTools.tar.gz
+RUN curl ${OCTO_TOOLS_DOWNLOAD_URL}  --output OctopusTools.tar.gz && tar -zxvf OctopusTools.tar.gz
 
-#delete dependency
 RUN apk del curl
 
 WORKDIR /src
