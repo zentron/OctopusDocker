@@ -1,0 +1,10 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+environment:
+  passwd: jmD9um0U9uJ9uKmAASvz3wxR4IYFU9bCc4N9mgMcX28
+build_script:
+- ps: >-
+    cd servercore
+    docker build -t octo:servercore .
+test_script:
+- ps: docker run octo:servercore version
