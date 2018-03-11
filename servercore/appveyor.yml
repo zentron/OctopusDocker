@@ -1,5 +1,6 @@
 version: 1.0.{build}
 image: Visual Studio 2017
+skip_non_tags: true
 environment:
  DOCKER_USER:
   secure: pbQKStRwGMl6RTDva4sLxw==
