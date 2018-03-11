@@ -16,4 +16,5 @@ test_script:
 deploy_script:
 - ps: >-
     docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+
     docker push roberterez/octopusdocker:4.31.1-servercore
