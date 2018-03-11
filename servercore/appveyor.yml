@@ -15,4 +15,4 @@ test_script:
  - docker run octo:servercore version
 deploy_script:
 - ps: >-
-    WRITE-HOST "$env:DOCKER_USER"
+    WRITE-HOST "$env:DOCKER_PASS"
