@@ -12,5 +12,4 @@ build_script:
 test_script:
  - docker run octo:servercore version
 deploy_script:
-- ps: >-
-    docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+  - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
