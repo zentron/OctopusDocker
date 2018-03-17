@@ -1,10 +1,16 @@
 FROM microsoft/dotnet:2.1-runtime-alpine
-MAINTAINER someone someone@octopus.com
+MAINTAINER robert.erez devops@octopus.com
 
 #alpine doesnt have curl installed
 RUN apk add --no-cache curl
 
-ENV OCTO_TOOLS_VERSION 4.31.1
+ARG OCTO_TOOLS_VERSION=4.31.1
+
+LABEL maintainer="devops@octopus.com" \ 
+	octopus.dockerfile.version="1.0" \
+	octopus.tools.version=$OCTO_TOOLS_VERSION 
+
+	
 ENV OCTO_TOOLS_DOWNLOAD_URL https://download.octopusdeploy.com/octopus-tools/$OCTO_TOOLS_VERSION/OctopusTools.$OCTO_TOOLS_VERSION.portable.tar.gz
 
 WORKDIR /octo
